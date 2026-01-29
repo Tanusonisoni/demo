@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="list">
+            <form id="myForm">
+            <label for="activity"># enter you today's task</label>
+            <input type="text" placeholder="enter your activity" name="activity" id="inputfo">
+            <button id="submit">Submit</button>
+            </form>
+            
+
+            <div class="list_conatiner">
+                <ul id="list"></ul>
+            </div>
+        </div>
+             <!-- <p>form submit pr</p>
+<form id="myForm">
+   <input type="text" placeholder="enter name" id="inputfo" required>
+   <button id="submit">submit</button>
+</form> -->
+<p id="formmes"></p> 
+    </div>
+    <script>
+    let data;
+
+    document.getElementById("myForm").addEventListener("submit",function(e){
+        e.preventDefault();
+//    if(name.trim()===""){
+
+//       
+//    }
+        addItem();
+    });
+       
+    function addItem(e)
+    {
+       let data= document.getElementById("inputfo").value;
+       if (inputfo.value==="")
+       {
+        return;
+       }
+       let li=document.createElement("li");
+       li.innerText=data;
+
+              // add btn's
+      let btn=document.createElement("button");
+      btn.innerText="delete" 
+      btn.style="background-color:red", btn.style.color = "white";
+      li.appendChild(btn)
+      btn.addEventListener("click",()=>{
+        li.remove();
+      })
+
+      let btn2=document.createElement("button");
+      btn2.innerText="update"
+      btn2.style="background-color:yellow",btn2.style.color = "white";
+      btn2.addEventListener("click",()=>{
+       let olddata=data;
+       let newbox=document.createElement(`<input type="text" placeholder="enter name" id="inputfo" required>
+`)
+       
+      })
+
+       li.appendChild(btn2)
+
+                // add btn's
+    
+       document.getElementById("list").appendChild(li);  
+       document.getElementById("inputfo").value="";
+
+    }
+
+
+    
+    
+
+    
+    
+    //  let list=["one","two","three","four","five","six"];
+     
+
+    //  list.forEach(function(list){
+        // const li=document.createElement("li");
+        // li.innerText=list;
+        // ul.append(li);
+    //  })
+
+    // document.getElementById("activity").addEventListener("submit",function(e){
+    //    e.preventDefault();
+    //    console.log(e.target.value);
+    //    let task=document.createElement("li").innerText=e.target.value;
+        
+    // })
+    
+// document.getElementById("myForm").addEventListener("submit",function(e){
+//    e.preventDefault();
+//  document.getElementById("formmes").innerText="your data",e.target.value;
+// });
+
+
+
+    
+    
+ </script>
+
+
+</body>
+</html>
